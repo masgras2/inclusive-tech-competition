@@ -1,19 +1,40 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const [opportunities, setOpportunities] = useState(0)
-  const [count, setCount] = useState(0)
+  const [opportunities, setOpportunities] = useState([{
+      "id": "abcdefg",
+      "name": "Opportunity name",
+      "field": "Computer Science",
+      "type": "scholarship",
+      "deadline": "2012-04-23T18:25:43.511Z",
+      "shortDescription": "Short description.",
+      "description": "Long description blah blah blah"
+  }])
+  const [shownOpportunities, setShownOpportunities] = useState([{
+    "id": "abcdefg",
+    "name": "Opportunity name",
+    "field": "Computer Science",
+    "type": "scholarship",
+    "deadline": "2012-04-23T18:25:43.511Z",
+    "shortDescription": "Short description.",
+    "description": "Long description blah blah blah"
+  }])
+  const [query, setQuery] = useState("")
+
+  useEffect(() => {
+    const toDisplay = opportunities.filter((element) => {
+      return element.name.includes(query) || element.field.includes(query) || element.description.includes(query)
+    });
+    setShownOpportunities(toDisplay)
+  }, [opportunities, query, shownOpportunities]);
+  
   return (
-    <div>
+    <div className="bg-gray-100">
       <h1>React Starter Code for Inclusive Tech Competition!</h1>
       <div>
-        <button className="bg-red-500 text-4xl font-4xl" onClick={() => setCount((count) => count + 1)}>
-          This button increases count; count is currently {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and <code>src/App.css</code> to get started!
-        </p>
+        <input htmlFor="search" className="h-4 w-20" value={query} onChange={(e) => setQuery(e.currentTarget.value)}/>
+
       </div>
     </div>
   )
