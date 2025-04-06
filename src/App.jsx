@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Modal from './Modal';
+import Modal from './modal';
 
 function App() {
   const [opportunities, setOpportunities] = useState([{

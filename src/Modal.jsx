@@ -17,7 +17,6 @@ const Modal = ({ onClose, title, description }) => {
   );
 };
 
-// Inline styles for demonstration
 const overlayStyle = {
   position: 'fixed',
   top: 0,
@@ -31,11 +30,11 @@ const overlayStyle = {
 };
 
 const modalStyle = {
-  background: '#fff',
-  padding: '20px',
-  borderRadius: '8px',
-  width: '300px',
-  textAlign: 'center',
-};
+   background: '#fff',
+   padding: '1.25rem', 
+   borderRadius: '0.5rem',
+   width: '18.75rem', 
+   textAlign: 'center',
+ };
 
 export default Modal
