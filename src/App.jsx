@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Modal from './modal';
+import Modal from './Modal';
 
 function App() {
   const [opportunities, setOpportunities] = useState([{
@@ -35,7 +35,7 @@ function App() {
     <div className="bg-gray-100">
       <h1>React Starter Code for Inclusive Tech Competition!</h1>
       <div>
-        <input htmlFor="search" className="h-4 w-20" value={query} onChange={(e) => setQuery(e.currentTarget.value)}/>
+        <input htmlFor="search" className="h-10 bg-white border border-gray-300 rounded-xl w-96 px-5" value={query} onChange={(e) => setQuery(e.currentTarget.value)} placeholder="search"/>
 
         <h1>Modal Example</h1>
         <button onClick={() => setIsModalOpen(true)}>Open Modal</button>
