@@ -32,7 +32,7 @@ function App() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="bg-gray-100">
+    <div className="">
       <h1>React Starter Code for Inclusive Tech Competition!</h1>
       <div>
         <input htmlFor="search" className="h-10 bg-white border border-gray-300 rounded-xl w-96 px-5" value={query} onChange={(e) => setQuery(e.currentTarget.value)} placeholder="search"/>
