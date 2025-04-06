@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import Modal from './modal';
 
 function App() {
   const [opportunities, setOpportunities] = useState([{
@@ -28,13 +29,19 @@ function App() {
     });
     setShownOpportunities(toDisplay)
   }, [opportunities, query, shownOpportunities]);
-  
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="bg-gray-100">
       <h1>React Starter Code for Inclusive Tech Competition!</h1>
       <div>
         <input htmlFor="search" className="h-4 w-20" value={query} onChange={(e) => setQuery(e.currentTarget.value)}/>
 
+        <h1>Modal Example</h1>
+        <button onClick={() => setIsModalOpen(true)}>Open Modal</button>
+        {isModalOpen && (
+          <Modal onClose={() => setIsModalOpen(false)} title="Modal Title" description={"This is a description"}/>
+        )}
       </div>
     </div>
   )
