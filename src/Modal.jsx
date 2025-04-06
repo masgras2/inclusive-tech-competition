@@ -4,8 +4,8 @@ import React from 'react';
 const Modal = ({ onClose, title, description }) => {
   return (
     <div style={overlayStyle}>
-      <div style={modalStyle}>
-        <h2>{title}</h2>
+      <div style={modalStyle} className="flex flex-col gap-4">
+        <h2 className="font-bold">{title}</h2>
         <div>
             <p>
                {description}
@@ -31,6 +31,7 @@ const overlayStyle = {
 };
 
 const modalStyle = {
+  position: 'absolute',
   background: '#fff',
   padding: '20px',
   borderRadius: '8px',

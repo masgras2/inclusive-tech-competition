@@ -1,7 +1,12 @@
 import React from 'react';
+import Modal from './Modal';
+import { useState } from 'react';
+
 
 const OpportunityCard = ({ opportunity }) => {
-    const { name, field, type, deadline, shortDescription } = opportunity;
+
+      const [isModalOpen, setIsModalOpen] = useState(false);
+    const { name, field, type, deadline, shortDescription, description } = opportunity;
 
     const formattedDeadline = new Date(deadline).toLocaleString();
 
@@ -13,7 +18,6 @@ const OpportunityCard = ({ opportunity }) => {
         boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
         padding: '20px',
         margin: '15px',
-        maxWidth: '400px',
         transition: 'transform 0.2s ease-in-out',
     };
 
@@ -24,13 +28,13 @@ const OpportunityCard = ({ opportunity }) => {
 
     const headingStyle = {
         fontSize: '1.6rem',
-        color: '#2c3e50',
+        color: '#111',
         marginBottom: '10px',
     };
 
     const paragraphStyle = {
         fontSize: '1rem',
-        color: '#34495e',
+        color: '#111111',
         margin: '8px 0',
     };
 
@@ -40,17 +44,17 @@ const OpportunityCard = ({ opportunity }) => {
 
     const lastParagraphStyle = {
         fontStyle: 'italic',
-        color: '#7f8c8d',
+        color: '#111111',
     };
 
     const deadlineStyle = {
-        color: '#e74c3c',
+        color: '#d73c2c',
         fontWeight: 'bold',
     };
 
     return (
         <div
-            className="opportunity-card"
+            className="opportunity-card flex-col items-center w-full"
             style={cardStyle}
             onMouseEnter={(e) => (e.target.style.transform = cardHoverStyle.transform)}
             onMouseLeave={(e) => (e.target.style.transform = '')}
@@ -69,6 +73,13 @@ const OpportunityCard = ({ opportunity }) => {
             <p style={lastParagraphStyle}>
                 <strong style={boldStyle}>Short Description:</strong> {shortDescription}
             </p>
+            <div className="w-full flex flex-col items-center justify-center">
+                <button className="min-w-40 mt-6" onClick={() => setIsModalOpen(true)}>See More</button>
+
+            </div>
+            {isModalOpen && (
+            <Modal onClose={() => setIsModalOpen(false)} title={name} description={description} />
+            )}
         </div>
     );
 };
