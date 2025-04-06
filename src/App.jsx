@@ -1,4 +1,4 @@
-import { useEffect, useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import OpportunityCard from './OpportunityCard';
 import OpportunityData from './example.json';
@@ -26,6 +26,7 @@ function App() {
   const [query, setQuery] = useState("")
 
   useEffect(() => {
+    setOpportunities(OpportunityData);
     const toDisplay = opportunities.filter((element) => {
       return element.name.includes(query) || element.field.includes(query) || element.description.includes(query)
     });
@@ -33,10 +34,6 @@ function App() {
   }, [opportunities, query, shownOpportunities]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [opportunities, setOpportunities] = useState([]);
-
-  useEffect(() => {
-    setOpportunities(OpportunityData);
-  }, []);
 
   if (opportunities.length === 0) {
     return <div>Loading...</div>;
