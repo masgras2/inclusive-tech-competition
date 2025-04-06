@@ -9,7 +9,7 @@ function App() {
       <h1>React Starter Code for Inclusive Tech Competition!</h1>
       <div>
         <button onClick={() => setCount((count) => count + 1)}>
-          This button increases count; count is currently {count}
+          This button increases count; count is currently {count}!
         </button>
         <p>
           Edit <code>src/App.jsx</code> and <code>src/App.css</code> to get started!
