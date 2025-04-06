@@ -5,24 +5,24 @@ import OpportunityData from './example.json';
 import Modal from './modal';
 
 function App() {
-  const [opportunities, setOpportunities] = useState([{
-    "id": "abcdefg",
-    "name": "Opportunity name",
-    "field": "Computer Science",
-    "type": "scholarship",
-    "deadline": "2012-04-23T18:25:43.511Z",
-    "shortDescription": "Short description.",
-    "description": "Long description blah blah blah"
-  }])
-  const [shownOpportunities, setShownOpportunities] = useState([{
-    "id": "abcdefg",
-    "name": "Opportunity name",
-    "field": "Computer Science",
-    "type": "scholarship",
-    "deadline": "2012-04-23T18:25:43.511Z",
-    "shortDescription": "Short description.",
-    "description": "Long description blah blah blah"
-  }])
+  // const [opportunities, setOpportunities] = useState([{
+  //   "id": "abcdefg",
+  //   "name": "Opportunity name",
+  //   "field": "Computer Science",
+  //   "type": "scholarship",
+  //   "deadline": "2012-04-23T18:25:43.511Z",
+  //   "shortDescription": "Short description.",
+  //   "description": "Long description blah blah blah"
+  // }])
+  // const [shownOpportunities, setShownOpportunities] = useState([{
+  //   "id": "abcdefg",
+  //   "name": "Opportunity name",
+  //   "field": "Computer Science",
+  //   "type": "scholarship",
+  //   "deadline": "2012-04-23T18:25:43.511Z",
+  //   "shortDescription": "Short description.",
+  //   "description": "Long description blah blah blah"
+  // }])
   const [query, setQuery] = useState("")
 
   useEffect(() => {
