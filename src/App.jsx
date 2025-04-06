@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import OpportunityCard from './OpportunityCard';
-import OpportunityData from './example.json';  // Assuming you are importing JSON directly.
+import OpportunityData from './example.json';
 
 function App() {
   const [opportunities, setOpportunities] = useState([]);
