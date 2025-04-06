@@ -272,6 +272,7 @@ function App() {
   
 
   useEffect(() => {
+    setOpportunities(OpportunityData);
     const toDisplay = opportunities.filter((element) => {
       return element.name.includes(query) || element.field.includes(query) || element.description.includes(query)
     });
