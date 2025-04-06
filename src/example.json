@@ -4,5 +4,6 @@
     "field": "Computer Science",
     "type": "scholarship",
     "deadline": "2012-04-23T18:25:43.511Z",
+    "shortDescription": "Short description.",
     "description": "Long description blah blah blah"
 }
